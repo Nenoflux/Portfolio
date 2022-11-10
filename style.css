@@ -27,14 +27,16 @@ nav {
     font-size: 14px;
     line-height: 1.42857143;
     margin: 0;
+    display: grid;
+    place-content: center;
 }
 
 .mainNavigation {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
 }
 
 .skillsInDemand {
@@ -45,6 +47,22 @@ nav {
     list-style: none;
     display: inline-flex;
     background-color: aqua;
+}
+
+.projectstitle {
+    grid-area: pt;
+}
+
+.projectcapsule {
+    grid-area:pc;
+}
+
+.pcimage {
+    grid-area:pci
+}
+
+.pcdescription {
+    grid-area: pcdes;
 }
 
 /*footer style code*/
@@ -71,13 +89,13 @@ footer {
     grid-area: fpc;
     display: grid;
     list-style: none;
-    grid-template-rows: 1;
-    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
 }
 
 #creatormark{
     grid-area: cm;
     list-style: none;
+    justify-content: center;
 }
 
 /*media query for mobile*/
