@@ -7,54 +7,122 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "landingarea"
+    "navbar"
+    "aboutme"
+    "skills"
+    "projects"
+    "footerarea";
 }
 
 /*header style code*/
 header {
+    grid-area: landingarea;
     background-color: #1d0941;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
     margin: 0;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". ." 
+    "pitchContainer ." 
+    ;
+}
+
+#pitchContainer {
+    grid-area: pitchContainer;
+    display: grid;
+    padding: 1rem;
+    background-color: chartreuse;
+}
+
+h1 {
+    padding-left: 1rem;
+}
+
+h3 {
+    padding-left: 1em;
 }
 
 /*navbar grid style code*/
 nav {
+    grid-area: navbar;
     background-color: #20056b;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
     margin: 0;
     display: grid;
-    place-content: center;
+    place-items: center;
 }
 
 .mainNavigation {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+}
+
+.mnItems {
+    margin: 1rem;
+    padding-left: 3em;
+}
+
+#Aboutme {
+    grid-area: aboutme;
+    display: grid;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    background-color: crimson;
+    justify-content: center;
 }
 
 .skillsInDemand {
+    grid-area: skills;
     list-style: none;
+    background-color: rgb(20, 220, 53);
 }
 
 #projects {
+    grid-area: projects;
     list-style: none;
-    display: inline-flex;
+    display: grid;
+    text-align: center;
     background-color: aqua;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "pt"
+    "pc";
+    height: 30vh;
+    margin-bottom: 2em;
 }
 
 .projectstitle {
     grid-area: pt;
 }
 
+#projectlist {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    margin-right: 2em;
+}
+
 .projectcapsule {
     grid-area:pc;
+    background-color: darkgreen;
 }
 
 .pcimage {
@@ -67,34 +135,39 @@ nav {
 
 /*footer style code*/
 footer {
+    grid-area: footerarea;
     background-color: #120964;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: auto;
     grid-template-areas: "smc cm fpc";
+    height: 20vh;
 }
 
 #socialmediacontacts {
     grid-area: smc;
     list-style: none;
-    justify-content: center;
+    display: grid;
+    justify-content: left;
+    margin-left: 1rem;
 }
 
 #freelancerplatformcontacts {
     grid-area: fpc;
     display: grid;
     list-style: none;
-    justify-content: center;
+    justify-content: right;
+    margin-right: 1rem;
 }
 
 #creatormark{
     grid-area: cm;
     list-style: none;
+    display: grid;
     justify-content: center;
 }
 
