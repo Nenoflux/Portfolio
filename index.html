@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<!-- Porfolio web site for a junior web developer-->
+<!-- Porfolio web site for a junior web developer Armando Kooper-->
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Porfolio web site of junior web developer Armando Kooper">
+        <meta name="author" content="Armando Kooper">
         <link rel="stylesheet" href="style.css">
+        <title>Armando K. Portfolio</title>
+
     </head>
 
     <body>
-        <header>
-            <div id="pitchContainer">
-            <h1>Armando Kooper</h1>
-            <h3> <p>Hi, I'm a junior web developer. I'm currently studying at the University of London.<br> I'm looking for a job as a junior web developer. <br>I'm also looking for a mentor to help me improve my skills.</p></h2>
-            </div>
-        </header>
-
         <nav>
             <ul class="mainNavigation">
                 <li class="mnItems"><a href="about.html">About</a></li>
@@ -22,41 +19,107 @@
                 <li class="mnItems"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        
+        <header>
+
+            <div id="pitchContainer">
+            <h1>Nice to meet you!<br>I'm Armando Kooper</h1>
+            <h2>You don't need to be a tech expert to have a great website. Leave the development to me and focus on what you're good at - running your business.<br>I'll make sure your site is fast, secure, and easy to use for both you and your customers.</h1>
+            <h3>Armando Kooper</h3>
+            
+            <button id="cta"><a href="contact.html">Contact me</a></button>
+            </div>
+        </header>
 
         <main>
             
             <!--explain my work ethic-->
             <div id="Aboutme">
             <h2>About me</h2>
-            <p>I'm currently working on a project that involves creating a website for a small business.<br> I'm responsible for the front-end development, which includes creating the HTML, CSS, and JavaScript for the website.<br> I'm also working on the backend development, which involves setting up the server, database, and API for the website.</p>
+            <p>I'm a self-taught programmer with a passion for designing, developing and optimizing user-friendly and feature-rich websites.<br> I’m a quick learner with sharp analytical and problem-solving skills and an eye for detail, <br> which makes me an asset on any project.</p>
             </div>
             
             <!--Indemand skills to be displayed here-->
-            <ul class="skillsInDemand">
-                <h3 id="skillstitle">Skills</h3>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-            </ul>
+            <section class="TechnicalSkill">
+            
+            
+             <h3 id="skillstitle">Technical Skill</h3>
+            <!-- Container for basic programming knowledge-->
+             <div class="skillsInDemand">
+                <h5>Programming Languages</h5>
+                <li>HTML---<a href="#">Proof</a></li>
+                <li>CSS---<a href="#">Proof</a></li>
+                <li>JavaScript---<a href="#">Proof</a></li>
+                <li>Python<a href="#">Proof</a></li>
+            </div>
+            
+            <!--Container for all frameworks worked with-->
+            <div id="FrameworksContainer">
+                <h5>Frameworks I've worked with:</h5>
+                <ul>
+                    <li>React<a href="#">Proof</a></li>
+                    <li>Angular<a href="#">Proof</a></li>
+                    <li>Tailwind<a href="#">Proof</a></li>
+                </ul>
+            </div>
+            </section>
 
-            <!--Projects to be displayed here-->
+            <!--soft skills vertical slider-->
+            <section id="Softskills">
+                <h3>Soft Skills</h3>
+                <div id="softskillsstage">
+                    <div class="softskill">
+                        <h5>Communication</h5>
+                        <p>Good communication is the key to a successful project. I'm a good listener and I'm always open to feedback.</p>
+                    </div>
+                    <div class="softskill">
+                        <h5>Teamwork</h5>
+                        <p>I'm a team player and I'm always open to new ideas. I'm always willing to help others and I'm always ready to learn.</p>
+                    </div>
+                    <div class="softskill">
+                        <h5>Problem Solving</h5>
+                        <p>I'm a problem solver and I'm always looking for new ways to improve my skills.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--Portfolio projects to be displayed here-->
             <ul id="projects">
                 <h3 class="projectstitle">Projects</h3>
                 <div id="projectlist">
-                <li class="projectcapsule"><img class="pcimage"><p class="pcdescription">this is the first project</p></li>
-                <li class="projectcapsule"><img class="pcimage"><p class="pcdescription">this is the first project</p></li>
-                <li class="projectcapsule"><img class="pcimage"><p class="pcdescription">this is the first project</p></li>
+                <li class="projectcapsule"><img class="pcimage"><h6>Project Name</h6><p class="pcdescription">this is the first project</p><a href="index.html">LINK</a></li>
+                <li class="projectcapsule"><img class="pcimage"><h6>Project Name</h6><p class="pcdescription">this is the first project</p><a href="index.html">LINK</a></li>
+                <li class="projectcapsule"><img class="pcimage"><h6>Project Name</h6><p class="pcdescription">this is the first project</p><a href="index.html">LINK</a></li>
+                <li class="projectcapsule"><img class="pcimage"><h6>Project Name</h6><p class="pcdescription">this is the first project</p><a href="index.html">LINK</a></li>
+                <li class="projectcapsule"><img class="pcimage"><h6>Project Name</h6><p class="pcdescription">this is the first project</p><a href="index.html">LINK</a></li>
                 </div>
             </ul>
 
+            <!--Contact form-->
+            <section id="contact">
+                <!--h3 class="contacttitle">Contact</h3-->
+                <form action="contact.html" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email..">
+                    <!--<label for="subject">Subject</label>-->
+                    <!--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>-->
+                    <!--input class="Submit"type="submit" value="Submit"-->
+                </form>
+            </section>
 
+        <script src="main.js"></script>
+ 
         </main>
 
         <footer>
             <p id="creatormark">Created by <a href="mailto: kooperarmando@gmail.com">Armando Kooper</a></p>
+            
             <!--Social media-->
             <ul id="socialmediacontacts">
+                <h6>Social Media</h6>
                 <li><a href="https://www.linkedin.com/in/armando-kooper-5b1b3b1b3/">LinkedIn</a></li>
                 <li><a href="https://www.facebook.com/kooper.armando">Facebook</a></li>
                 <li><a href="https://www.instagram.com/kooperarmando/">Instagram</a></li>
@@ -64,8 +127,10 @@
 
             <!--freelance platform contacts-->
             <ul id="freelancerplatformcontacts">
+                <h6>Freelance Platforms</h6>
                 <li><a href="https://www.freelancer.com/u/KuupaDev">Freelancer</a></li>
                 <li><a href="https://www.upwork.com/freelancers/~01e1b1b1b1b1b1b1b1">Upwork</a></li>
+                <li><a href="https://www.fiverr.com">Fiverr</a></li>
             </ul>
         </footer>
 

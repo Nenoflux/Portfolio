@@ -1,3 +1,8 @@
+:root {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+
+}
+
 
 /*body syle code*/
 body {
@@ -5,14 +10,13 @@ body {
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "landingarea"
     "navbar"
+    "landingarea"
     "aboutme"
     "skills"
     "projects"
@@ -23,17 +27,20 @@ body {
 header {
     grid-area: landingarea;
     background-color: #1d0941;
+    background-image: url(Assets/LandingImage3.jpg);
+    background-repeat: no-repeat;
+    background-size: 1400px 700px;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     margin: 0;
-    height: 80vh;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    ". ." 
-    "pitchContainer ." 
+    ". . ." 
+    "pitchContainer . ." 
     ;
 }
 
@@ -41,15 +48,53 @@ header {
     grid-area: pitchContainer;
     display: grid;
     padding: 1rem;
-    background-color: chartreuse;
+    background-color: rgb(63, 119, 8);
+    opacity: 0.8;
+    border-radius: 6px;
+    height: 30em;
+    justify-content: center;
+    margin-left: 2em;
+    margin-bottom: 1rem;
+}
+
+/*Call to action buttons*/
+#cta {
+    /*background-color: gold;*/
+    border-radius: 3px;
+    background-color: black;
+    width: 20pc;
+    margin-left: 18rem;
+}
+
+#cta :hover {
+    font-size: large;
+    border: 3px;
+    padding: 5px;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a :hover {
+    color: #00ff0d;
+    text-shadow: #1d0941;
+    font-size: large;
 }
 
 h1 {
     padding-left: 1rem;
+    font-size: xx-large;
 }
 
 h3 {
     padding-left: 1em;
+}
+
+h2 {
+    font-size: 1.2rem;
 }
 
 /*navbar grid style code*/
@@ -61,15 +106,33 @@ nav {
     font-size: 14px;
     margin: 0;
     display: grid;
-    place-items: center;
+    grid-template-columns: 1f 2fr 30%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". . navblock";
 }
+
+
 
 .mainNavigation {
     list-style: none;
+    grid-area: navblock;
     margin: 0;
     padding: 0;
-    display: inline-flex;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:auto;
 }
+
+.mainNavigation li {
+    display: flex;
+    place-content: center;
+}
+
+        .mainNavigation li :hover {
+            font-size: larger;
+        }
 
 .mnItems {
     margin: 1rem;
@@ -85,24 +148,96 @@ nav {
     justify-content: center;
 }
 
+.TechnicalSkill {
+    grid-area: skills;
+    list-style: none;
+    background-color: rgb(12, 83, 24);
+    display: grid;
+    height: 40vh;
+    font-size: large;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". ."
+    "skills Frameworks";
+}
+
 .skillsInDemand {
     grid-area: skills;
     list-style: none;
     background-color: rgb(20, 220, 53);
+    display: grid;
+    place-content: center;
+}
+
+#FrameworksContainer {
+    grid-area: Frameworks;
+    list-style: none;
+    background-color: rgb(171, 243, 104);
+    display: grid;
+    place-content: center;
+}
+
+#Softskills {
+    grid-area: Softskills;
+    list-style: none;
+    display: grid;
+    background-color: rgb(1, 41, 7);
+    text-align: center;
+    height: 40vh;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". title ."
+    ". softskillstage ."
+    ". . .";
+}
+
+#Softskills h3 {
+    grid-area: title;
+    font-size: x-large;
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+#softskillsstage {
+    grid-area: softskillstage;
+    list-style: none;
+    background-color: rgb(3, 3, 3);
+    display: grid;
+    text-align: center;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". . ."
+    ". activeskill ."
+    ". . .";
+}
+
+.softskill {
+    background-color: darkorange;
+    visibility: hidden;
+    display: none;
+}
+
+.activesoftskill {
+    grid-area: activeskill;
+    background-color: rgb(217, 255, 0);
+    visibility: visible;
 }
 
 #projects {
     grid-area: projects;
     list-style: none;
     display: grid;
-    text-align: center;
     background-color: aqua;
     grid-template-columns: 1fr ;
     grid-template-rows: auto;
     grid-template-areas: 
     "pt"
     "pc";
-    height: 30vh;
+    height: 40vh;
     margin-bottom: 2em;
 }
 
@@ -113,6 +248,7 @@ nav {
 #projectlist {
     background-color: blueviolet;
     display: flex;
+    padding: 1rem;
     flex-direction: row;
     justify-content: center;
     justify-content: space-around;
@@ -123,16 +259,53 @@ nav {
 .projectcapsule {
     grid-area:pc;
     background-color: darkgreen;
+    }
+
+    .projectcapsule :hover{
+        visibility: visible;
+        background-color: #00ff0d;
+    }
+
+
+    .pcimage {
+        grid-area:pci
+    }
+
+    .pcdescription {
+        grid-area: pcdes;
+    }
+
+/*contact section*/
+#contact {
+    display: flex;
+    flex-direction: row;
+    background-color: #00ff0d;
+    justify-content: center;
+    }
+
+    #contact a {
+        text-decoration: none;
+        color: white;
+    }
+
+        #contact a :hover {
+            color: #00ff0d;
+            text-shadow: #1d0941;
+            font-size: large;
 }
 
-.pcimage {
-    grid-area:pci
+
+#name {
+    grid-area: name;
 }
 
-.pcdescription {
-    grid-area: pcdes;
+#email {
+    grid-area: email;
 }
 
+.Submit {
+    grid-area: submit;
+}
 /*footer style code*/
 footer {
     grid-area: footerarea;
@@ -142,7 +315,7 @@ footer {
     font-size: 14px;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-auto-rows: auto;
     grid-template-areas: "smc cm fpc";
     height: 20vh;
@@ -167,13 +340,23 @@ footer {
 #creatormark{
     grid-area: cm;
     list-style: none;
+    margin-top:6em;
     display: grid;
-    justify-content: center;
+    text-align: center;
 }
 
 /*media query for mobile*/
 @media screen and (max-width: 600px) {
+    nav {
+        grid-template-columns: 1fr 1fr max-content;
+        grid-template-rows: auto;
+    }
+
     .mainNavigation {
         grid-template-columns: 1fr;
+    }
+
+    #cta {
+        margin: 1rem;
     }
 }
