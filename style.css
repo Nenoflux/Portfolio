@@ -3,10 +3,15 @@
 
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 
 /*body syle code*/
 body {
-    background-color: #162152;
+    background-color: #b0b5b8;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -27,9 +32,9 @@ body {
 header {
     grid-area: landingarea;
     background-color: #1d0941;
-    background-image: url(Assets/LandingImage3.jpg);
+    background-image: url(Assets/landingImage4.jpg);
     background-repeat: no-repeat;
-    background-size: 1400px 700px;
+    background-size: 1400px 800px;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -48,13 +53,34 @@ header {
     grid-area: pitchContainer;
     display: grid;
     padding: 1rem;
-    background-color: rgb(63, 119, 8);
+    background-color: rgb(8, 47, 119);
     opacity: 0.8;
     border-radius: 6px;
     height: 30em;
     justify-content: center;
     margin-left: 2em;
     margin-bottom: 1rem;
+    animation-name: Pitcheranimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pitchContainer img {
+    display: none;
+    margin-left: 4rem;
+}
+
+#hi{
+    font-size: 2rem;
+    margin-left: 1rem;
+    animation-name: hianimation;
+    animation-duration: 1.4s;
+    animation-delay: 10ms;
+    animation-direction: alternate;
+    animation-iteration-count: 4;
+    animation-timing-function: cubic-bezier();
+    opacity: 0;
 }
 
 /*Call to action buttons*/
@@ -142,47 +168,82 @@ nav {
 #Aboutme {
     grid-area: aboutme;
     display: grid;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    background-color: crimson;
+    margin: 3em;
+    background-color: rgb(197, 194, 195);
     justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color:rgb(3, 3, 49);
+    border-radius: 2em;
+}
+
+#Aboutme p {
+    margin: 1rem;
 }
 
 .TechnicalSkill {
     grid-area: skills;
     list-style: none;
-    background-color: rgb(12, 83, 24);
+    background-color: rgb(50, 76, 109);
     display: grid;
-    height: 40vh;
+    height: 70vh;
     font-size: large;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    ". ."
-    "skills Frameworks";
+    "sktitle sktitle"
+    "skillsInDemand Frameworks"
+    "title title"
+    "Softskills Softskills";
 }
 
+#skillstitle {
+    grid-area: sktitle;
+    margin-top:2rem;
+    margin-bottom: 2rem;
+    margin-left:1rem;
+    color:#e5e1ee
+}
+ 
 .skillsInDemand {
-    grid-area: skills;
+    grid-area: skillsInDemand;
     list-style: none;
-    background-color: rgb(20, 220, 53);
+    background-color: rgb(14, 22, 133);
     display: grid;
     place-content: center;
+    font-size: large;
+}
+
+.opinionContainer {
+    background-color: rgb(78, 87, 134);
+    margin-left: 1rem;
+    font-size: small;
+}
+
+.skillsInDemand h5 {
+    list-style: none;
+    font-size: large;
+    margin: 1em;
 }
 
 #FrameworksContainer {
     grid-area: Frameworks;
-    list-style: none;
-    background-color: rgb(171, 243, 104);
+    background-color: rgb(141, 179, 250);
     display: grid;
     place-content: center;
+}
+
+#FrameworksContainer ul {
+    list-style: none;
+    background-color: black;
+    margin: 1em;
 }
 
 #Softskills {
     grid-area: Softskills;
     list-style: none;
     display: grid;
-    background-color: rgb(1, 41, 7);
+    background-color: rgb(70, 60, 94);
     text-align: center;
     height: 40vh;
     grid-template-columns: 100px 1fr 100px;
@@ -195,19 +256,20 @@ nav {
 
 #Softskills h3 {
     grid-area: title;
-    font-size: x-large;
-    margin: 0;
-    padding: 0;
+    font-size: xx-large;
     margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 #softskillsstage {
     grid-area: softskillstage;
+    border-radius: 1rem;
     list-style: none;
-    background-color: rgb(3, 3, 3);
+    background-color: rgb(13, 21, 107);
     display: grid;
+    height: 16em;
     text-align: center;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-columns: 10% 1fr 10%;
     grid-template-rows: auto;
     grid-template-areas: 
     ". . ."
@@ -223,64 +285,102 @@ nav {
 
 .activesoftskill {
     grid-area: activeskill;
-    background-color: rgb(217, 255, 0);
+    font-size: xx-large;
+    height: max-content;
+    background-color: rgb(9, 2, 73);
+    opacity: 0.9;
     visibility: visible;
+    margin: 0;
 }
 
 #projects {
     grid-area: projects;
     list-style: none;
     display: grid;
-    background-color: aqua;
-    grid-template-columns: 1fr ;
+    margin-top:8px;
+    background-color: rgb(19, 14, 100);
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
     "pt"
     "pc";
-    height: 40vh;
-    margin-bottom: 2em;
+    height: 70vh;
+    margin: 0;
 }
 
 .projectstitle {
     grid-area: pt;
+    background-color: rgb(4, 4, 49);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+
 }
 
 #projectlist {
-    background-color: blueviolet;
+    background-color: rgb(114, 114, 211);
     display: flex;
-    padding: 1rem;
+    margin-top:5px;
+    padding:4px;
     flex-direction: row;
-    justify-content: center;
     justify-content: space-around;
     margin-bottom: 2em;
-    margin-right: 2em;
 }
 
 .projectcapsule {
     grid-area:pc;
-    background-color: darkgreen;
+    background-color: rgb(0, 2, 100);
+    display: flex;
+    flex-direction: column;
+    border: 2px;
+    border-radius: 3px;
+    width: 200px;
     }
 
     .projectcapsule :hover{
-        visibility: visible;
         background-color: #00ff0d;
     }
 
 
     .pcimage {
-        grid-area:pci
+        grid-area:pci;
+        width: auto;
+        height: 100px;
+        border-radius: 3px;
+    }
+    
+    .projectcapsule h6 {
+        margin-left: 1rem;
+        margin-top:1rem;
     }
 
     .pcdescription {
         grid-area: pcdes;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
+
+.projectcapsule :last-child {
+    margin-top: auto;
+}
+
+.projectcapsule a {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
 
 /*contact section*/
 #contact {
     display: flex;
     flex-direction: row;
-    background-color: #00ff0d;
+    background-color: #070066;
     justify-content: center;
+    margin:0;
     }
 
     #contact a {
@@ -309,11 +409,12 @@ nav {
 /*footer style code*/
 footer {
     grid-area: footerarea;
-    background-color: #120964;
+    background-color: #0c073b;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    margin: 0;
+    padding:16px;
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-auto-rows: auto;
@@ -345,12 +446,232 @@ footer {
     text-align: center;
 }
 
+/*animation code*/
+@keyframes Pitcheranimation {
+    from {
+        background-color: #20056b;
+    }
+    
+    to {
+        background-color: #291bac;
+    }
+}
+
+@keyframes greetingslidinanimation {
+    from {
+        transform: translateX(-100%);
+    }
+    
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes hianimation {
+    from {
+        opacity: 1;
+        font-size: small;
+        color: aqua;
+    }
+    to {
+        opacity: 0;
+        color:white;    
+        font-size: xx-large;
+    }
+}
+
+/*media query for tablet*/
+@media screen and (max-width: 900px) {
+    nav {
+        grid-area: navbar;
+        background-color: #20056b;
+        color: #ffffff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 2f 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        ". navblock";
+    }
+    
+    header {
+        height: 165vh;
+    }
+
+    #pitchContainer {
+        grid-area: pitchContainer;
+        display: grid;
+        padding: 1rem;
+        background-color: rgb(8, 38, 119);
+        opacity: 1;
+        border-radius: 6px;
+        height: 60em;
+        justify-content: center;
+        margin: 4rem;
+        width: 80%;
+        animation-name: Pitcheranimation;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    #pitchContainer h1 {
+        animation-name:greetingslidinanimation;
+        animation-duration: 0.7s;
+    }
+    
+
+    #pitchContainer img {
+        display: unset;
+        visibility: visible;
+        margin-left: 4rem;
+        opacity: 1;
+    }
+
+    #projects {
+        grid-area: projects;
+        list-style: none;
+        display: grid;
+        background-color: aqua;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "pt"
+        "pc";
+        height: max-content;
+        margin-bottom: 1em;
+    }
+    
+    #projectlist {
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        place-items: center;
+        padding: 1rem;
+        margin-bottom: 2em;
+        margin-top: 2em;
+    }
+
+    .projectcapsule {
+        grid-area:pc;
+        background-color: darkgreen;
+        display: flex;
+        flex-direction: column;
+        border: 2px;
+        margin: 1rem;
+        border-radius: 3px;
+        width: 300px;
+        height: 400px;
+        }
+
+    .mainNavigation {
+        grid-template-columns: 1fr;
+        grid-area: navblock;
+        display: inline-flex;
+        justify-items: right;
+        margin-left: 10px;
+    }
+
+    #cta {
+        margin: 1rem;
+    }
+    
+    .pcimage {
+        grid-area:pci;
+        display: flex;
+        height: 200px;
+        width: auto;
+    }
+
+    .activesoftskill {
+        grid-area: activeskill;
+        font-size: large;
+        height: max-content;
+        background-color: rgb(217, 255, 0);
+        visibility: visible;
+        margin: 0;
+    }
+}
+
 /*media query for mobile*/
 @media screen and (max-width: 600px) {
     nav {
-        grid-template-columns: 1fr 1fr max-content;
+        grid-area: navbar;
+        background-color: #20056b;
+        color: #ffffff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
+        grid-template-areas:
+        "navblock";
     }
+
+    header {
+        height: 165vh;
+    }
+
+    #pitchContainer {
+        grid-area: pitchContainer;
+        display: grid;
+        padding: 1rem;
+        background-color: rgb(8, 56, 119);
+        opacity: 1;
+        border-radius: 6px;
+        height: 60em;
+        justify-content: center;
+        margin: 4rem;
+        width: 70%;
+    }
+    
+
+    #pitchContainer img {
+        display: unset;
+        visibility: visible;
+        margin-left: 4rem;
+        opacity: 1;
+    }
+
+    #projects {
+        grid-area: projects;
+        list-style: none;
+        display: grid;
+        background-color: aqua;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "pt"
+        "pc";
+        height: max-content;
+        margin-bottom: 1em;
+    }
+    
+    #projectlist {
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        place-items: center;
+        padding: 1rem;
+        margin-bottom: 2em;
+        margin-top: 2em;
+    }
+
+    .projectcapsule {
+        grid-area:pc;
+        background-color: darkgreen;
+        display: flex;
+        flex-direction: column;
+        border: 2px;
+        margin: 1rem;
+        border-radius: 3px;
+        width: 300px;
+        height: 400px;
+        }
 
     .mainNavigation {
         grid-template-columns: 1fr;
@@ -359,4 +680,21 @@ footer {
     #cta {
         margin: 1rem;
     }
+    
+    .pcimage {
+        grid-area:pci;
+        display: flex;
+        height: 200px;
+        width: auto;
+    }
+
+    .activesoftskill {
+        grid-area: activeskill;
+        font-size: large;
+        height: max-content;
+        background-color: rgb(217, 255, 0);
+        visibility: visible;
+        margin: 0;
+    }
+
 }
