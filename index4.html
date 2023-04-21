@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!-- Porfolio website for a junior web developer Armando Kooper-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Porfolio web site for a junior web developer">
+        <meta name="author" content="Armando Kooper Porfolio">
+        <title>Armando Kooper</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
+    <!--link rel="stylesheet" href="style.css"-->
+    <style>
+        /*header style code*/
+header {
+    grid-area: landingarea;
+    background-image: url(Assets/landingImage4.jpg);
+    background-repeat: no-repeat;
+    background-size: 1400px 800px;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". . ." 
+    "pitchContainer . ." ;
+}
+    #pitchContainer {
+    grid-area: pitchContainer;
+    display: grid;
+    padding: 1rem;
+    background-color: rgb(8, 47, 119);
+    opacity: 0.8;
+    border-radius: 6px;
+    height: 30em;
+    justify-content: center;
+    margin-left: 2em;
+    margin-bottom: 1rem;
+    animation-name: Pitcheranimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pitchContainer img {
+    display: none;
+    margin-left: 4rem;
+}
+
+#hi{
+    font-size: 2rem;
+    margin-left: 1rem;
+    animation-name: hianimation;
+    animation-duration: 1.4s;
+    animation-delay: 10ms;
+    animation-direction: alternate;
+    animation-iteration-count: 4;
+    animation-timing-function: cubic-bezier();
+    opacity: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a :hover {
+    color: #00ff0d;
+    text-shadow: #1d0941;
+    font-size: large;
+}
+
+h1 {
+    padding-left: 1rem;
+    font-size: xx-large;
+}
+
+h3 {
+    padding-left: 1em;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+/*Call to action buttons*/
+#cta {
+    /*background-color: gold;*/
+    border-radius: 3px;
+    background-color: black;
+    width: 20pc;
+    margin-left: 18rem;
+}
+
+#cta :hover {
+    font-size: large;
+    border: 3px;
+    padding: 5px;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a :hover {
+    color: #00ff0d;
+    text-shadow: #1d0941;
+    font-size: large;
+}
+/*animation code*/
+@keyframes Pitcheranimation {
+    from {
+        background-color: #20056b;
+    }
+    
+    to {
+        background-color: #291bac;
+    }
+}
+
+@keyframes greetingslidinanimation {
+    from {
+        transform: translateX(-100%);
+    }
+    
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes hianimation {
+    from {
+        opacity: 1;
+        font-size: small;
+        color: aqua;
+    }
+    to {
+        opacity: 0;
+        color:white;    
+        font-size: xx-large;
+    }
+}
+/*media query for tablet*/
+@media screen and (max-width: 900px) {
+    
+    header {
+        height: 165vh;
+    }
+
+    #pitchContainer {
+        grid-area: pitchContainer;
+        display: grid;
+        padding: 1rem;
+        background-color: rgb(8, 38, 119);
+        opacity: 1;
+        border-radius: 6px;
+        height: 60em;
+        justify-content: center;
+        margin: 4rem;
+        width: 80%;
+        animation-name: Pitcheranimation;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    #pitchContainer h1 {
+        animation-name:greetingslidinanimation;
+        animation-duration: 0.7s;
+    }
+    
+
+    #pitchContainer img {
+        display: unset;
+        visibility: visible;
+        margin-left: 4rem;
+        opacity: 1;
+    }
+}
+/*media query for mobile*/
+@media screen and (max-width: 600px) {
+
+    header {
+        height: 150vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        ". pitchContainer ." 
+        ".pitchContainer ." ;
+    }
+
+    #pitchContainer {
+        grid-area: pitchContainer;
+        display: grid;
+        padding: 1rem;
+        background-color: rgb(8, 56, 119);
+        opacity: 1;
+        border-radius: 6px;
+        height: 60em;
+        justify-content: center;
+        width:100%;
+        box-shadow: black 3px 6px 3px;
+    }
+    
+
+    #pitchContainer img {
+        display: unset;
+        visibility: visible;
+        margin-left: 4rem;
+        opacity: 1;
+    }
+}
+
+    </style>
+
+    </head>
+    <body>
+      <!--navbar-->
+      <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h2>Armando Kooper</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+
+      <header>
+        <div id="pitchContainer" class="container-fluid">
+        <div id="hi">HI!</div>
+        <img src="Assets/profile image no_background.png" height="300px" width="200px">
+        <h1>Nice to meet you!<br>I'm Armando Kooper</h1>
+        <!--img src="Assets/profile image no_background.png" height="300px" width="200px"-->
+        <h2>You don't need to be a tech expert to have a great website. Leave the development to me and focus on what you're good at - running your business.<br>I'll make sure your site is fast, secure, and easy to use for both you and your customers.</h1>
+        <h3>Armando Kooper</h3>
+        
+        <button><a href="contact.html">Contact me</a></button>
+        </div>
+    </header>
+    
+
+
+    <!-- Modern Technical  skills section tailwind css -->  
+    <section class="py-20 bg-gray-200">
+    <div class="container mx-auto max-w-4xl px-4">
+        <h2 class="text-4xl font-bold mb-4">Technical Skills</h2>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">HTML, CSS, JavaScript</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm proficient in writing HTML, CSS and JavaScript for developing websites.</p>
+            </div>
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">React</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm experienced with React for developing dynamic user interfaces.</p>
+            </div>
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">Tailwind</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm familiar with Tailwind for developing responsive UI.</p>
+            </div>
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 8h16M4 16h16"></path><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">Bootstrap</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm familiar with Bootstrap for developing responsive UI.</p>
+            </div>
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><circle cx="6" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M20 6a9.9 9.9 0 01-9.9 9.9"></path><path d="M14.31 8.69A7 7 0 1118.63 17M9.7 8.69A7 7 0 1113.39 17"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">Git</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm experienced with Git for version control.</p>
+            </div>
+            <div class="w-1/2 px-4 mb-8">
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905v.71c0 .314-.242.586-.537.637l-6.145 1.44A2 2 0 014 7.24V10M20 19.868v.152A2 2 0 0118.837 21h-3.672a2 2 0 01-1.781-1.3l-3.07-6.49A2 2 0 018.663 10H12m-1-7a1 1 0 011-1h.01M19 10a1 1 0 00-1 1v.01"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-0">PHP</h3>
+                </div>
+                <p class="text-xl leading-relaxed mb-4">I'm experienced with PHP for developing web applications.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+ <!-- modern About me section tailwind css -->
+        <section class="py-20">
+            <div class="container mx-auto max-w-4xl px-4">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2">
+                        <img src="Assets/profile image no_background.png" alt="profile image" class="rounded-full h-64 w-64 mx-auto md:float-right md:mt-0">
+                        </div>
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                        <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                        <p class="text-xl leading-relaxed mb-4">I'm a self-taught programmer with a passion for designing, developing and optimizing user-friendly and feature-rich websites. I’m a quick learner with sharp analytical and problem-solving skills and an eye for detail, which makes me an asset on any project.</p>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+    <!-- modern Soft Skills section tailwind css -->
+    <section class="bg-gray-200 py-20">
+    <div class="container mx-auto max-w-4xl px-4">
+        <h2 class="text-4xl font-bold mb-4">Soft Skills</h2>
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-1/4 p-4">
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-12 h-12 mb-4 text-gray-500"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="text-lg font-bold">Creative Solution</h3>
+                    <p class="text-gray-600 mb-4">I'm a creative problem solver and always looking for new ideas to solve any issue.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye w-12 h-12 mb-4 text-gray-500"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <h3 class="text-lg font-bold">Eye for Detail</h3>
+                    <p class="text-gray-600 mb-4">I'm a detail oriented person and I'm always looking for perfection in whatever I do.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-12 h-12 mb-4 text-gray-500"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="text-lg font-bold">Team Player</h3>
+                    <p class="text-gray-600 mb-4">I'm a team player and I'm always willing to help out where I can and give my best.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard w-12 h-12 mb-4 text-gray-500"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    <h3 class="text-lg font-bold">Organized</h3>
+                    <p class="text-gray-600 mb-4">I'm an organized person and I always like to keep things tidy and organized.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20" id="projects">
+    <div class="container mx-auto max-w-4xl px-4">
+        <h2 class="text-4xl font-bold mb-4">Projects</h2>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="p-8 bg-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Face Plant | Social media app</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Project is social media front-end with a focus on user-experience.</p>
+                    <a href="https://nenoflux.github.io/FacePlant/" class="inline-block px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg">View Project</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="p-8 bg-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">The Foot Shop | E-commerce site</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">E-commerce website with minimal functionality.</p>
+                    <a href="https://nenoflux.github.io/FutureFootwear.io/" class="inline-block px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg">View Project</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="p-8 bg-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">JS2D engine | Basic JavaScript game engine</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">JavaScript 2d game engine for kids to create basic games.</p>
+                    <a href="https://nenoflux.github.io/JS2DEngine/" class="inline-block px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg">View Project</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="p-8 bg-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Loot box | Subscription landing page</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Subscription page that sends game assets kits to its subscribers or could be download from the website when made available. </p>
+                    <a href="https://nenoflux.github.io/KuupaLootBox.io/" class="inline-block px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg">View Project</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+                <div class="p-8 bg-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Vacation Location | Newsletter subscription page</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">Newsletter that creates a list of popular or trending locations and send it to the subscriber.</p>
+                    <a href="https://nenoflux.github.io/AmazingVacations.io/" class="inline-block px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- modern Footer tailwind css-->
+    <footer class="py-20 bg-gray-200">
+        <div class="container mx-auto max-w-4xl px-4">
+            <h2 class="text-4xl font-bold mb-4">Contact me</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-1/2 px-4 mb-8">
+                <form action="https://formspree.io/mzbjzlvq" method="POST">
+                <div class="flex flex-wrap mb-6">
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
+                Name
+                </label>
+                <input type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="John Doe">
+                </div>
+                <div class="flex flex-wrap mb-6">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
+                Email
+                </label>
+                <input type="email" name="_replyto" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="johndoe@example.com">
+                </div>
+                <div class="flex flex-wrap mb-6">
+                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">
+                Message
+                </label>
+                <textarea name="message" id="message" rows="6" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Hello!"></textarea>
+                </div>
+                <div class="flex flex-wrap">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Send Message
+                </button>
+                </div>
+                </form>
+                </div>
+                <div class="w-1/2 px-4 mb-8">
+                <p class="text-xl leading-relaxed mb-4">If you have a project you would like to discuss or just want to say hello, I’d love to hear from you.</p>
+                <ul class="text-xl leading-relaxed">
+                <li>
+                <a href="mailto:kooperarmando@gmail.com" class="text-blue-500 hover:text-blue-800">kooperarmando@gmail.com</ao>
+                </li>
+                </ul>
+                </div>
+            </div>
+    <!--links-->
+    <div class="flex justify-center py-12 bg-gray-200">
+    <a href="https://www.linkedin.com/in/armando-kooper/">
+    <svg class="fill-current text-blue-500 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+    </a>
+    <a href="https://github.com/armandokpr12">
+    <svg class="fill-current text-gray-500 h-12 ml-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+    </a>
+      </div>
+      <!--extra credentials-->
+    <div class="flex justify-center py-4 bg-gray-200">
+        <p class="text-sm text-gray-600">© 2023 Armando Kooper —
+        Built with ❤ using Tailwind CSS</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </body>
+</html>
+
