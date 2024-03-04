@@ -197,6 +197,12 @@ a :hover {
         ". pitchContainer ." 
         ".pitchContainer ." ;
     }
+     .sticky-top {
+    position: fixed; /* Make it stay at the top*/
+    top: 0;
+    width: 100%; 
+    z-index: 10; /* Ensure it stays on top of other content */
+  }
 
     #pitchContainer {
         grid-area: pitchContainer;
@@ -226,6 +232,7 @@ a :hover {
     <body>
       <!--navbar-->
       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    </nav>
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><h2>Armando Kooper</h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
