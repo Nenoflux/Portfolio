@@ -15,218 +15,218 @@
     <!--link rel="stylesheet" href="style.css"-->
     <style>
         /*header style code*/
-header {
-    grid-area: landingarea;
-    background-image: url(Assets/landingImage4.jpg);
-    background-repeat: no-repeat;
-    background-size: 1400px 800px;
-    color: #ffffff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    ". . ." 
-    "pitchContainer . ." ;
-}
-    #pitchContainer {
-    grid-area: pitchContainer;
-    display: grid;
-    padding: 1rem;
-    background-color: rgb(8, 47, 119);
-    opacity: 0.8;
-    border-radius: 6px;
-    height: 30em;
-    justify-content: center;
-    margin-left: 2em;
-    margin-bottom: 1rem;
-    animation-name: Pitcheranimation;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#pitchContainer img {
-    display: none;
-    margin-left: 4rem;
-}
-
-#hi{
-    font-size: 2rem;
-    margin-left: 1rem;
-    animation-name: hianimation;
-    animation-duration: 1.4s;
-    animation-delay: 10ms;
-    animation-direction: alternate;
-    animation-iteration-count: 4;
-    animation-timing-function: cubic-bezier();
-    opacity: 0;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a :hover {
-    color: #00ff0d;
-    text-shadow: #1d0941;
-    font-size: large;
-}
-
-h1 {
-    padding-left: 1rem;
-    font-size: xx-large;
-}
-
-h3 {
-    padding-left: 1em;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-.sticky-top {
-    position: fixed; /* Make it stay at the top*/
-    top: 0;
-    color:black;
-    width: 100%; 
-    z-index: 10; /* Ensure it stays on top of other content */
-}
-
-/*Call to action buttons*/
-#cta {
-    /*background-color: gold;*/
-    border-radius: 3px;
-    background-color: black;
-    width: 20pc;
-    margin-left: 18rem;
-}
-
-#cta :hover {
-    font-size: large;
-    border: 3px;
-    padding: 5px;
-}
-
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a :hover {
-    color: #00ff0d;
-    text-shadow: #1d0941;
-    font-size: large;
-}
-/*animation code*/
-@keyframes Pitcheranimation {
-    from {
-        background-color: #20056b;
-    }
-    
-    to {
-        background-color: #291bac;
-    }
-}
-
-@keyframes greetingslidinanimation {
-    from {
-        transform: translateX(-100%);
-    }
-    
-    to {
-        transform: translateX(0);
-    }
-}
-@keyframes hianimation {
-    from {
-        opacity: 1;
-        font-size: small;
-        color: aqua;
-    }
-    to {
-        opacity: 0;
-        color:white;    
-        font-size: xx-large;
-    }
-}
-/*media query for tablet*/
-@media screen and (max-width: 900px) {
-    
-    header {
-        height: 165vh;
-    }
-
-    #pitchContainer {
-        grid-area: pitchContainer;
-        display: grid;
-        padding: 1rem;
-        background-color: rgb(8, 38, 119);
-        opacity: 1;
-        border-radius: 6px;
-        height: 60em;
-        justify-content: center;
-        margin: 4rem;
-        width: 80%;
-        animation-name: Pitcheranimation;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
-
-    #pitchContainer h1 {
-        animation-name:greetingslidinanimation;
-        animation-duration: 0.7s;
-    }
-    
-
-    #pitchContainer img {
-        display: unset;
-        visibility: visible;
-        margin-left: 4rem;
-        opacity: 1;
-    }
-}
-/*media query for mobile*/
-@media screen and (max-width: 600px) {
-
-    header {
-        height: 150vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        ". pitchContainer ." 
-        ".pitchContainer ." ;
-    }
-
-
-    #pitchContainer {
-        grid-area: pitchContainer;
-        display: grid;
-        padding: 1rem;
-        background-color: rgb(8, 56, 119);
-        opacity: 1;
-        border-radius: 6px;
-        height: 60em;
-        justify-content: center;
-        width:100%;
-        box-shadow: black 3px 6px 3px;
-    }
-    
-
-    #pitchContainer img {
-        display: unset;
-        visibility: visible;
-        margin-left: 4rem;
-        opacity: 1;
-    }
-}
+        header {
+            grid-area: landingarea;
+            background-image: url(Assets/landingImage4.jpg);
+            background-repeat: no-repeat;
+            background-size: 1400px 800px;
+            color: #ffffff;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            ". . ." 
+            "pitchContainer . ." ;
+        }
+            #pitchContainer {
+            grid-area: pitchContainer;
+            display: grid;
+            padding: 1rem;
+            background-color: rgb(8, 47, 119);
+            opacity: 0.8;
+            border-radius: 6px;
+            height: 30em;
+            justify-content: center;
+            margin-left: 2em;
+            margin-bottom: 1rem;
+            animation-name: Pitcheranimation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        
+        #pitchContainer img {
+            display: none;
+            margin-left: 4rem;
+        }
+        
+        #hi{
+            font-size: 2rem;
+            margin-left: 1rem;
+            animation-name: hianimation;
+            animation-duration: 1.4s;
+            animation-delay: 10ms;
+            animation-direction: alternate;
+            animation-iteration-count: 4;
+            animation-timing-function: cubic-bezier();
+            opacity: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        a :hover {
+            color: #00ff0d;
+            text-shadow: #1d0941;
+            font-size: large;
+        }
+        
+        h1 {
+            padding-left: 1rem;
+            font-size: xx-large;
+        }
+        
+        h3 {
+            padding-left: 1em;
+        }
+        
+        h2 {
+            font-size: 1.2rem;
+        }
+        .sticky-top {
+            position: fixed; /* Make it stay at the top*/
+            top: 0;
+            color:black;
+            width: 100%; 
+            z-index: 10; /* Ensure it stays on top of other content */
+        }
+        
+        /*Call to action buttons*/
+        #cta {
+            /*background-color: gold;*/
+            border-radius: 3px;
+            background-color: black;
+            width: 20pc;
+            margin-left: 18rem;
+        }
+        
+        #cta :hover {
+            font-size: large;
+            border: 3px;
+            padding: 5px;
+        }
+        
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        a :hover {
+            color: #00ff0d;
+            text-shadow: #1d0941;
+            font-size: large;
+        }
+        /*animation code*/
+        @keyframes Pitcheranimation {
+            from {
+                background-color: #20056b;
+            }
+            
+            to {
+                background-color: #291bac;
+            }
+        }
+        
+        @keyframes greetingslidinanimation {
+            from {
+                transform: translateX(-100%);
+            }
+            
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes hianimation {
+            from {
+                opacity: 1;
+                font-size: small;
+                color: aqua;
+            }
+            to {
+                opacity: 0;
+                color:white;    
+                font-size: xx-large;
+            }
+        }
+        /*media query for tablet*/
+        @media screen and (max-width: 900px) {
+            
+            header {
+                height: 165vh;
+            }
+        
+            #pitchContainer {
+                grid-area: pitchContainer;
+                display: grid;
+                padding: 1rem;
+                background-color: rgb(8, 38, 119);
+                opacity: 1;
+                border-radius: 6px;
+                height: 60em;
+                justify-content: center;
+                margin: 4rem;
+                width: 80%;
+                animation-name: Pitcheranimation;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+        
+            #pitchContainer h1 {
+                animation-name:greetingslidinanimation;
+                animation-duration: 0.7s;
+            }
+            
+        
+            #pitchContainer img {
+                display: unset;
+                visibility: visible;
+                margin-left: 4rem;
+                opacity: 1;
+            }
+        }
+        /*media query for mobile*/
+        @media screen and (max-width: 600px) {
+        
+            header {
+                height: 150vh;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 
+                ". pitchContainer ." 
+                ".pitchContainer ." ;
+            }
+        
+        
+            #pitchContainer {
+                grid-area: pitchContainer;
+                display: grid;
+                padding: 1rem;
+                background-color: rgb(8, 56, 119);
+                opacity: 1;
+                border-radius: 6px;
+                height: 60em;
+                justify-content: center;
+                width:100%;
+                box-shadow: black 3px 6px 3px;
+            }
+            
+        
+            #pitchContainer img {
+                display: unset;
+                visibility: visible;
+                margin-left: 4rem;
+                opacity: 1;
+            }
+        }
 
     </style>
 
@@ -457,7 +457,8 @@ a :hover {
                 <p class="text-xl leading-relaxed mb-4">If you have a project you would like to discuss or just want to say hello, I’d love to hear from you.</p>
                 <ul class="text-xl leading-relaxed">
                 <li>
-                <a href="mailto:kooperarmando@gmail.com" class="text-blue-500 hover:text-blue-800">kooperarmando@gmail.com</ao>
+                <a href="mailto:kooperarmando@gmail.com" class="text-blue-500 hover:text-blue-800">kooperarmando@gmail.com</a>
+                <button><a href="https://forms.gle/4vg9y5dYT7MSwbB76">Start your project today</a></button>
                 </li>
                 </ul>
                 </div>
