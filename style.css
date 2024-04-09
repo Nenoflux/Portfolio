@@ -374,6 +374,18 @@ nav {
     justify-content: center;
 }
 
+/* Inside your CSS file or <style> tags */
+.request-quote-button { /* Give it a specific class */
+    background-color: #007BFF; /* A vibrant blue */
+    color: #ffffff;            /* White text */
+    border: none;              /* Remove default border */
+    padding: 10px 20px;        /* More prominent padding */
+    border-radius: 5px;        /* Slightly rounded corners */
+    font-weight: bold;         /* Slightly bolder text */
+    cursor: pointer;           /* Indicate it's clickable */
+}
+
+
 /*contact section*/
 #contact {
     display: flex;
